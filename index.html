@@ -1,0 +1,100 @@
+<!--
+ * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @Date: 2024-12-19 21:26:02
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @LastEditTime: 2024-12-20 17:02:08
+ * @FilePath: \---------12.19音乐\index.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 图标 -->
+    <link rel="icon" href="./preview - 副本.ico" type="image/x-icon">
+    <!-- 标题 -->
+    <title>小明易云音乐</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="music-player">
+        <header>
+            <h1>小明易云音乐</h1>
+        </header>
+        
+        <nav>
+            <div class="search">
+                <i class="search-icon">🔍</i>
+                <input type="text" placeholder="搜索音乐">
+            </div>
+            <div class="favorites">
+                <i class="heart-icon">❤️</i>
+                我喜欢的
+            </div>
+            <div class="local-music">
+                <i class="history-icon">🕒</i>
+                播放历史
+            </div>
+        </nav>
+
+        <main>
+            <div class="playlist">
+                <div class="playlist-header">
+                    <h3>搜索结果：</h3>
+                    <!-- 添加清空历史按钮,默认隐藏 -->
+                    <button id="clearHistory" class="clear-btn" style="display: none;">
+                        <i>🗑️</i> 清空历史
+                    </button>
+                </div>
+                <div id="songList">
+                    <!-- 搜索结果将在这里动态显示 -->
+                </div>
+            </div>
+
+            <div class="music-info">
+                <div class="cover">
+                    <!-- <i class="star-icon">⭐</i>
+                    音乐封面 -->
+                </div>
+                <div class="song-details">
+                    <span class="current-song-title">歌名</span>
+                    <span class="separator">-</span>
+                    <span class="current-song-artist">歌手</span>
+                </div>
+                <div class="lyrics">
+                    音乐歌词
+                </div>
+            </div>
+        </main>
+
+        <footer class="player-controls">
+            <div class="control-buttons">
+                <button>⏮️</button>
+                <button>▶️</button>
+                <button>⏭️</button>
+            </div>
+            <div class="progress-bar">
+                <span>0:00</span>
+                <div class="progress"></div>
+                <span>0:00</span>
+            </div>
+            <div class="more-options">
+                ⋮
+                <div class="dropdown-menu">
+                    <button class="dropdown-item">
+                        <i>⬇️</i> 下载
+                    </button>
+                    <button class="dropdown-item">
+                        <i>🔊</i> 音量
+                    </button>
+                    <button class="dropdown-item">
+                        <i>⚡</i> 倍数
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
