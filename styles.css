@@ -411,7 +411,7 @@ main {
     transform: scale(0.9);
     color: #333;
     user-select: none;
-    font-family: STXingkai; /* 使用自定义字体 */
+   /*  font-family: STXingkai; 使用自定义字体 */
 }
 
 .lyric-line.active {
