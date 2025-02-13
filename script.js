@@ -22,7 +22,7 @@ async function searchSongs(keyword) {
         document.getElementById('songList').innerHTML = '<div class="loading">搜索中...</div>';
         
         searchKeyword = keyword.trim();
-        const response = await fetch(`https://www.hhlqilongzhu.cn/api/dg_wyymusic.php?gm=${encodeURIComponent(searchKeyword)}&num=50`);
+        const response = await fetch(`https://www.hhlqilongzhu.cn/api/dg_wyymusic.php?gm=${encodeURIComponent(searchKeyword)}&num=50&br=7`);
         
         if (!response.ok) {
             throw new Error('网络请求失败');
@@ -904,7 +904,7 @@ async function loadAndPlaySong(songInfo) {
         const response = await fetch(
             `https://www.hhlqilongzhu.cn/api/dg_wyymusic.php?gm=${
                 encodeURIComponent(songInfo.searchKeyword)
-            }&n=${songInfo.index}&type=json&num=50`
+            }&n=${songInfo.index}&type=json&num=50&br=7`
         );
 
         if (!response.ok) throw new Error('网络请求失败');
