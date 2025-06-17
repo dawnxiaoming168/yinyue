@@ -22,7 +22,8 @@ async function searchSongs(keyword) {
         document.getElementById('songList').innerHTML = '<div class="loading">搜索中...</div>';
         
         searchKeyword = keyword.trim();
-        const response = await fetch(`https://www.hhlqilongzhu.cn/api/dg_wyymusic.php?gm=${encodeURIComponent(searchKeyword)}&num=50&br=7`);
+        // ✅ 修改接口地址为指定HTTPS链接
+        const response = await fetch(`https://sdkapi.hhlqilongzhu.cn/api/dgMusic_wyy/?key=DragonD95D21C5969B038916247BF22B4641CA&gm=${encodeURIComponent(searchKeyword)}&num=50&br=7`);
         
         if (!response.ok) {
             throw new Error('网络请求失败');
@@ -659,7 +660,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 进度条点击和拖动��
+    // 进度条点击和拖动事件
     let isDragging = false;
     
     progressBar.addEventListener('mousedown', (e) => {
@@ -901,8 +902,9 @@ async function getSongInfo(index, title, artist) {
 // 4. 添加音频加载和播放函数
 async function loadAndPlaySong(songInfo) {
     try {
+        // ✅ 修改接口地址为指定HTTPS链接
         const response = await fetch(
-            `https://www.hhlqilongzhu.cn/api/dg_wyymusic.php?gm=${
+            `https://sdkapi.hhlqilongzhu.cn/api/dgMusic_wyy/?key=DragonD95D21C5969B038916247BF22B4641CA&gm=${
                 encodeURIComponent(songInfo.searchKeyword)
             }&n=${songInfo.index}&type=json&num=50&br=7`
         );
@@ -979,12 +981,6 @@ async function setupAudioPlayer(data) {
         cover.innerHTML = data.cover ? 
             `<img src="${data.cover}" alt="${data.title}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">` :
             `<div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">暂无封面</div>`;
-
-        //封面也为body背景图片还有样式
-        // document.body.style.backgroundImage = `url(${data.cover})`;
-        // document.body.style.backgroundSize = 'cover';
-        // document.body.style.backgroundPosition = 'center';
-        // document.body.style.backgroundRepeat = 'no-repeat';
 
         // 更新歌曲信息
         document.querySelector('.current-song-title').textContent = data.title || '未知歌曲';
@@ -1072,4 +1068,4 @@ async function setupAudioPlayer(data) {
     } catch (error) {
         throw new Error(`设置音频播放器失败: ${error.message}`);
     }
-} 
+}
